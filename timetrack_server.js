@@ -51,6 +51,4 @@ db.query(
         console.log('Server started....');
         server.listen(3000, '127.0.0.1');
     }
-
-
 );
