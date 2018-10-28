@@ -1,3 +1,5 @@
+Referecen: https://auth0.com/docs/architecture-scenarios/
+
 ## Authentication vs. Authorization: a metaphor
 To help clear things up, it may be helpful to think of the problem in terms of a metaphor: chocolate vs. fudge. From the start, the nature of these two things is quite different: chocolate is an ingredient, fudge is a confection. Chocolate can be used to make many different things, and it can even be used on its own. Fudge can be made out of many different things, and one of those things might be chocolate, but it takes more than one ingredient to make fudge happen and it might not even involve chocolate. As such, it's incorrect to say that chocolate equals fudge, and it's certainly overreaching to say that chocolate equals chocolate fudge.
 
