@@ -1,5 +1,5 @@
 var http = require('http');
-var work = require('./lib/timetrack');
+var work = require('../lib/timetrack');
 var mysql = require('mysql');
 
 var db = mysql.createConnection({
