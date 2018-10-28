@@ -13,25 +13,25 @@ function getParentIndex(childIndex) {
 }
 
 function hasLeftChild(index) {
-    
+    return getLeftChildIndex(index) < heap.length;
 }
 
 
 function hasRightChild(index) {
-    
+    return getRightChildIndex(index) < heap.length;
 }
 
 
 function leftChild(index) {
-    
+    return heap[getLeftChildIndex(index)];
 }
 
 
 function rightChild(index) {
-    
+    return heap[getRightChildIndex(index)];
 }
 
 
 function parent(index) {
-    
+    return heap[getParentIndex(index)];
 }
