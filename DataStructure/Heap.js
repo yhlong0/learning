@@ -1,4 +1,4 @@
-let heap = [];
+let heap = [2,3,4,10,1];
 
 function getLeftChildIndex(parentIndex) {
     return parentIndex + 1;
@@ -9,7 +9,7 @@ function getRightChildIndex(parentIndex) {
 }
 
 function getParentIndex(childIndex) {
-    return (childIndex - 1) / 2;
+    return Math.floor((childIndex - 1) / 2);
 }
 
 function hasLeftChild(index) {
@@ -61,7 +61,8 @@ function add(item) {
 
 function heapifyUp() {
     let index = heap.length - 1;
-    while (hasParent(index) && parent(index) > heap[index]) {
+    console.log(parent(index));
+    while (hasParent(index) && (parent(index) > heap[index])) {
         swap(getParentIndex(index), index)
         index = getParentIndex(index);
     } 
@@ -70,11 +71,11 @@ function heapifyUp() {
 function heapifyDown() {
     let index = 0;
     let smallerChildIndex;
-    
-    while (hasLeftChild(index + 1)) {
-        smallerChildIndex = index + 1;
-        if(hasRightChild(index + 2) && rightChild(index + 2) < leftChild(index + 1)) {
-            smallerChildIndex = index + 2;
+
+    while (hasLeftChild(index)) {
+        smallerChildIndex = getLeftChildIndex(index);
+        if(hasRightChild(index) && rightChild(index) < leftChild(index)) {
+            smallerChildIndex = getRightChildIndex(index);
         }
 
         if(heap[index] < heap[smallerChildIndex]) {
@@ -86,3 +87,6 @@ function heapifyDown() {
         index = smallerChildIndex;
     }
 }
+
+heapifyUp();
+console.log(heap);
