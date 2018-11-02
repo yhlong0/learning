@@ -41,11 +41,11 @@
             // Note: The code uses the JavaScript Array.prototype.map() method to
             // create an array of markers based on a given "locations" array.
             // The map() method here has nothing to do with the Google Maps API.
-            var markers = locations.map(function (location, i) {
+            var boxMarkers = locations.map(function (location, i) {
                 var marker = new google.maps.Marker({
                     position: location,
                     label: labels[i % labels.length],
-                    icon: 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png'
+                    icon: './box.png'
                 });
 
                 google.maps.event.addListener(marker, 'click', function (evt) {
@@ -55,6 +55,54 @@
 
                 return marker
             });
+
+            var shipMarkers = shipLocations.map(function(shipLocation, i) {
+                var marker = new google.maps.Marker({
+                    position: shipLocation,
+                    label: labels[i % labels.length],
+                    icon: './cargo-ship.png'
+                });
+
+                google.maps.event.addListener(marker, 'click', function (evt) {
+                    infoWin.setContent(shipLocation.info);
+                    infoWin.open(map, marker);
+                });
+
+                return marker
+            });
+
+            var planeMarkers = planeLocations.map(function (planeLocation, i) {
+                var marker = new google.maps.Marker({
+                    position: planeLocation,
+                    label: labels[i % labels.length],
+                    icon: './air-freight.png'
+                });
+
+                google.maps.event.addListener(marker, 'click', function (evt) {
+                    infoWin.setContent(planeLocation.info);
+                    infoWin.open(map, marker);
+                });
+
+                return marker
+            });
+
+
+            var truckMarkers = truckLocations.map(function (truckLocation, i) {
+                var marker = new google.maps.Marker({
+                    position: truckLocation,
+                    label: labels[i % labels.length],
+                    icon: './delivery-truck.png'
+                });
+
+                google.maps.event.addListener(marker, 'click', function (evt) {
+                    infoWin.setContent(truckLocation.info);
+                    infoWin.open(map, marker);
+                });
+
+                return marker
+            });
+
+            var markers = [...boxMarkers, ...shipMarkers, ...planeMarkers, ...truckMarkers];
 
 
             // Add a marker clusterer to manage the markers.
@@ -98,6 +146,85 @@
             '<p><b>Tracking Status:</b> At UPS station waiting for deliever.</p> ' +
             '</div>' +
             '</div>';
+
+
+        var contentString4 = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Fedex Plane</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Shipment ID:</b> 7789200004</p>' +
+            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
+            '<p><b>Receiver:</b> John Bob</p> ' +
+            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '</div>' +
+            '</div>';
+
+
+        var contentString5 = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">UPS Truck</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Shipment ID:</b> 7789200004</p>' +
+            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
+            '<p><b>Receiver:</b> John Bob</p> ' +
+            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '</div>' +
+            '</div>';
+
+
+
+        var contentString6 = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Fedex Truck</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Shipment ID:</b> 7789200004</p>' +
+            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
+            '<p><b>Receiver:</b> John Bob</p> ' +
+            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '</div>' +
+            '</div>';
+
+
+        var contentString7 = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Cargo Ship</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Shipment ID:</b> 7789200004</p>' +
+            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
+            '<p><b>Receiver:</b> John Bob</p> ' +
+            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '</div>' +
+            '</div>';
+
+
+        var shipLocations = [
+            { lat: 27.146281, lng: 132.808777, info: contentString7 },
+            { lat: 27.191272, lng: 152.373729, info: contentString7 },
+            { lat: 29.192271, lng: 194.373728, info: contentString7 },
+            { lat: 0.192271, lng: 71.373728, info: contentString7 },
+        ];
+
+        var planeLocations = [
+            { lat: 49.146281, lng: -127.808777, info: contentString4 },
+            { lat: 44.146281, lng: -131.808777, info: contentString4 },
+            { lat: 51.191272, lng: 178.373729, info: contentString4 },
+            { lat: 44.192271, lng: 121.373728, info: contentString4 },
+            { lat: 49.192271, lng: 17.373728, info: contentString6 },
+        ];
+
+        var truckLocations = [
+            { lat: 22.146281, lng: 83.808777, info: contentString5 },
+            { lat: 23.146281, lng: 75.808777, info: contentString6 },
+            { lat: 38.887987, lng: -110.395320, info: contentString5 },
+            { lat: 37.192271, lng: -114.373728, info: contentString6 },
+            { lat: 39.192271, lng: 87.373728, info: contentString5 },
+            { lat: 27.192271, lng: 109.373728, info: contentString6 },
+            { lat: 46.192271, lng: 3.373728, info: contentString6 },
+        ];
 
         var locations = [
             { lat: 31.146281, lng: 121.808777, info: contentString1 },
