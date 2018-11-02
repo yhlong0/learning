@@ -52,6 +52,20 @@
                 return marker
             });
 
+            var redBoxMarkers = redBoxlocations.map(function (location, i) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    icon: './redbox.png'
+                });
+
+                google.maps.event.addListener(marker, 'click', function (evt) {
+                    infoWin.setContent(location.info);
+                    infoWin.open(map, marker);
+                });
+
+                return marker
+            });
+
             var shipMarkers = shipLocations.map(function(shipLocation, i) {
                 var marker = new google.maps.Marker({
                     position: shipLocation,
@@ -95,7 +109,13 @@
                 return marker
             });
 
-            var markers = [...boxMarkers, ...shipMarkers, ...planeMarkers, ...truckMarkers];
+            var markers = [
+                ...boxMarkers, 
+                ...shipMarkers, 
+                ...planeMarkers, 
+                ...truckMarkers,
+                ...redBoxMarkers
+            ];
 
 
             // Add a marker clusterer to manage the markers.
@@ -120,12 +140,20 @@
         var contentString2 = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">Fedex Warehouse</h1>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:green;">Delivered</h1>' +
             '<div id="bodyContent">' +
             '<p><b>Shipment ID:</b> 5421589900</p>' +
-            '<p><b>Shipment Date:</b> 11/02/2018</p>' +
+            '<p><b>Delivery Date:</b> 11/02/2018</p>' +
+            '<p><b>Destination:</b> Texarkana, AR US</p>' +
             '<p><b>Receiver:</b> Alice Smith</p> ' +
-            '<p><b>Tracking Status:</b> At Fedex warehouse waiting for deliver.</p> ' +
+            '<p><b>Tracking Status:</b></p> ' +
+            '<p> 12/29 10:45 am Delivered <b>New Delhi, India</b></p>' +
+            '<p> 12/29 8:45 am on FedEx vehicle for delivery <b>New Delhi, India</b></p> ' +
+            '<p> 12/29 7:10 am at local FedEx facility <b>New Delhi, India</b></p>' +
+            '<p> 12/28 5:30 am Departed FedEx location <b>New Delhi, India</b></p>' +
+            '<p> 12/28 7:45 am Arrived at FedEx location <b>LA, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at FedEx origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
         var contentString3 = '<div id="content">' +
@@ -194,6 +222,19 @@
             '</div>';
 
 
+        var contentString8 = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:red">Delivery Exception</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Shipment ID:</b> 7789200004</p>' +
+            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
+            '<p><b>Receiver:</b> John Bob</p> ' +
+            '<p><b>Scan Activities:</b> At local FedEx facility PORT HARCOURT null NG</p> ' +
+            '<p style="color:red"><b>Tracking Status:</b> Local weather delay - Delivery not attempted!.</p> ' +
+            '</div>' +
+            '</div>';
+
         var shipLocations = [
             { lat: 27.146281, lng: 132.808777, info: contentString7 },
             { lat: 27.191272, lng: 152.373729, info: contentString7 },
@@ -217,6 +258,13 @@
             { lat: 39.192271, lng: 87.373728, info: contentString5 },
             { lat: 27.192271, lng: 109.373728, info: contentString6 },
             { lat: 46.192271, lng: 3.373728, info: contentString6 },
+        ];
+
+        var redBoxlocations = [
+            { lat: 27.146281, lng: 81.808777, info: contentString8 },
+            { lat: 25.191272, lng: 8.373729, info: contentString8 },
+            { lat: -2.192271, lng: 120.373728, info: contentString8 },
+            { lat: 0.192271, lng: 71.373728, info: contentString7 },
         ];
 
         var locations = [
