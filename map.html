@@ -151,7 +151,7 @@ test
             '<p> 12/29 8:45 am on FedEx vehicle for delivery <b>New Delhi, India</b></p> ' +
             '<p> 12/29 7:10 am at local FedEx facility <b>New Delhi, India</b></p>' +
             '<p> 12/28 5:30 am Departed FedEx location <b>New Delhi, India</b></p>' +
-            '<p> 12/28 7:45 am Arrived at FedEx location <b>LA, CA</b></p>' +
+            '<p> 12/28 7:45 am Arrived at FedEx location <b>Los Angeles, CA</b></p>' +
             '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
             '<p> 12/26 7:36am at FedEx origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
@@ -159,12 +159,20 @@ test
         var contentString3 = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">UPS Station</h1>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:green;">Delivered</h1>' +
             '<div id="bodyContent">' +
-            '<p><b>Shipment ID:</b> 7789200004</p>' +
-            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
-            '<p><b>Receiver:</b> John Bob</p> ' +
-            '<p><b>Tracking Status:</b> At UPS station waiting for deliever.</p> ' +
+            '<p><b>Shipment ID:</b> 5421589900</p>' +
+            '<p><b>Delivery Date:</b> 11/02/2018</p>' +
+            '<p><b>Destination:</b> Texarkana, AR US</p>' +
+            '<p><b>Receiver:</b> Alice Smith</p> ' +
+            '<p><b>Tracking Status:</b></p> ' +
+            '<p> 12/29 10:45 am Delivered <b>New Delhi, India</b></p>' +
+            '<p> 12/29 8:45 am on UPS vehicle for delivery <b>New Delhi, India</b></p> ' +
+            '<p> 12/29 7:10 am at local UPS facility <b>New Delhi, India</b></p>' +
+            '<p> 12/28 5:30 am Departed UPS location <b>New Delhi, India</b></p>' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
 
@@ -172,12 +180,17 @@ test
         var contentString4 = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">Fedex Plane</h1>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:#2196f3;">Fedex Plane in transit</h1>' +
             '<div id="bodyContent">' +
             '<p><b>Shipment ID:</b> 7789200004</p>' +
             '<p><b>Shipment Date:</b> 10/25/2018</p>' +
             '<p><b>Receiver:</b> John Bob</p> ' +
-            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '<p><b>Tracking Status:</b> </p> ' +
+            '<p> In transit, waiting for deliever.</p>' +
+            '<p> 12/28 5:30 am Departed UPS location <b>New Delhi, India</b></p>' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
 
@@ -185,12 +198,17 @@ test
         var contentString5 = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">UPS Truck</h1>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:#2196f3;">UPS Truck in transit</h1>' +
             '<div id="bodyContent">' +
             '<p><b>Shipment ID:</b> 7789200004</p>' +
             '<p><b>Shipment Date:</b> 10/25/2018</p>' +
             '<p><b>Receiver:</b> John Bob</p> ' +
-            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '<p><b>Tracking Status:</b> </p> ' +
+            '<p> In transit, waiting for deliever.</p>' +
+            '<p> 12/28 5:30 am Departed UPS location <b>New Delhi, India</b></p>' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
 
@@ -199,12 +217,17 @@ test
         var contentString6 = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">Fedex Truck</h1>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:#2196f3;">Fedex Truck in transit</h1>' +
             '<div id="bodyContent">' +
             '<p><b>Shipment ID:</b> 7789200004</p>' +
             '<p><b>Shipment Date:</b> 10/25/2018</p>' +
             '<p><b>Receiver:</b> John Bob</p> ' +
-            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '<p><b>Tracking Status:</b></p> ' +
+            '<p> In transit, waiting for deliever.</p>' +
+            '<p> 12/28 5:30 am Departed UPS location <b>New Delhi, India</b></p>' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
 
@@ -212,12 +235,17 @@ test
         var contentString7 = '<div id="content">' +
             '<div id="siteNotice">' +
             '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">Cargo Ship</h1>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:#2196f3;">Cargo Ship in transit</h1>' +
             '<div id="bodyContent">' +
             '<p><b>Shipment ID:</b> 7789200004</p>' +
             '<p><b>Shipment Date:</b> 10/25/2018</p>' +
             '<p><b>Receiver:</b> John Bob</p> ' +
-            '<p><b>Tracking Status:</b> In transit, waiting for deliever.</p> ' +
+            '<p><b>Tracking Status:</b></p> ' +
+            '<p> In transit, waiting for deliever.</p>' +
+            '<p> 12/28 5:30 am Departed UPS location <b>New Delhi, India</b></p>' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
 
@@ -232,6 +260,9 @@ test
             '<p><b>Receiver:</b> John Bob</p> ' +
             '<p><b>Scan Activities:</b> At local FedEx facility PORT HARCOURT null NG</p> ' +
             '<p style="color:red"><b>Tracking Status:</b> Local weather delay - Delivery not attempted!.</p> ' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
 
