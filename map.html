@@ -34,9 +34,6 @@
 
             var infoWin = new google.maps.InfoWindow();
 
-            // Create an array of alphabetical characters used to label the markers.
-            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
             // Add some markers to the map.
             // Note: The code uses the JavaScript Array.prototype.map() method to
             // create an array of markers based on a given "locations" array.
@@ -44,7 +41,6 @@
             var boxMarkers = locations.map(function (location, i) {
                 var marker = new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length],
                     icon: './box.png'
                 });
 
@@ -59,7 +55,6 @@
             var shipMarkers = shipLocations.map(function(shipLocation, i) {
                 var marker = new google.maps.Marker({
                     position: shipLocation,
-                    label: labels[i % labels.length],
                     icon: './cargo-ship.png'
                 });
 
@@ -74,7 +69,6 @@
             var planeMarkers = planeLocations.map(function (planeLocation, i) {
                 var marker = new google.maps.Marker({
                     position: planeLocation,
-                    label: labels[i % labels.length],
                     icon: './air-freight.png'
                 });
 
@@ -90,7 +84,6 @@
             var truckMarkers = truckLocations.map(function (truckLocation, i) {
                 var marker = new google.maps.Marker({
                     position: truckLocation,
-                    label: labels[i % labels.length],
                     icon: './delivery-truck.png'
                 });
 
