@@ -1,0 +1,7 @@
+applications:
+- name: eshipui
+  host: eshipui
+  memory: 1G
+  buildpack: sdk-for-nodejs
+  domain: mybluemix.net
+  command: npm start

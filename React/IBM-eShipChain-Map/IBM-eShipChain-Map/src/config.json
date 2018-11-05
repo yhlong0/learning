@@ -1,0 +1,4 @@
+{
+  "apiRoot": "https://eship-shipment-service.mybluemix.net",
+  "loginPath": "/loginprofiles/"
+}

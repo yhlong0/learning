@@ -1,0 +1,162 @@
+{
+  "weightUnits": [
+    "kg",
+    "lb"
+  ],
+  "volumeUnits": [
+    "ml",
+    "gm"
+  ],
+  "dimensionUnits": [
+    "cm",
+    "in"
+  ],
+  "currency": [
+    "USD",
+    "RMB",
+    "IRR"
+  ],
+  "packageType": [
+    "Carrier PAK",
+    "Fiberboard Box",
+    "Plastic Box",
+    "Steel Box",
+    "Aluminum Box",
+    "Wood Box",
+    "Plywood Box",
+    "Reconstituted Wood Box",
+    "Metal Box",
+    "Fibre Drum",
+    "Plastic Drum",
+    "Steel Drum",
+    "Aluminum Drum",
+    "Plywood Drum",
+    "Plastic Jerrican",
+    "Steel Jerrican",
+    "Aluminum Jerrican",
+    "Cylinder"
+  ],
+  "termsOfSale": [
+    "Freight on Board",
+    "Free Carrier",
+    "Ex Works",
+    "Delivery Duty Paid",
+    "Delivery Duty Unpaid"
+  ],
+  "materialName": [
+    "Human Material",
+    "Animal Material",
+    "Toxin",
+    "Viruses",
+    "Bacteria",
+    "Fungi",
+    "Parasites",
+    "Genetic Element",
+    "Genetically Modified Microorganisms",
+    "Vectors",
+    "Plasmids",
+    "Others"
+  ],
+  "materialType": [
+    "Blood",
+    "Bone",
+    "Cell Line",
+    "Cell - Lysate",
+    "Cell - Pellet",
+    "Cerebral Spinal Fluid",
+    "DNA",
+    "gDNA",
+    "Plasma",
+    "Platelets",
+    "RNA",
+    "Saliva",
+    "Serum/Sera",
+    "Sperm",
+    "Stool",
+    "Tissue",
+    "Tooth",
+    "Tumor",
+    "Urine",
+    "Other"
+  ],
+  "additionalClassification": [
+    "Purposefully infected with viruses, toxins, bacteria or fungi",
+    "High probability of containing a pathogen",
+    "Minimal likelihood that pathogens are present"
+  ],
+  "numberOfUnits": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "billTo": [
+    "Prepaid",
+    "Recipient",
+    "Third Party"
+  ],
+  "carrierQuotes": [
+    {
+      "carrierID": 1,
+      "carrierName": "FedEx",
+      "carrierVariant": "International First",
+      "estimatedShippingCharges": 60.82,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 1,
+      "carrierName": "FedEx",
+      "carrierVariant": "International Priority",
+      "estimatedShippingCharges": 50.82,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 1,
+      "carrierName": "FedEx",
+      "carrierVariant": "International Economy",
+      "estimatedShippingCharges": 10.0,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 2,
+      "carrierName": "UPS",
+      "carrierVariant": "WorldWide Express Plus",
+      "estimatedShippingCharges": 5.0,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 2,
+      "carrierName": "UPS",
+      "carrierVariant": "WorldWide Expedited",
+      "estimatedShippingCharges": 17.0,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 2,
+      "carrierName": "UPS",
+      "carrierVariant": "WorldWide Express",
+      "estimatedShippingCharges": 11.0,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 2,
+      "carrierName": "UPS",
+      "carrierVariant": "WorldWide Saver",
+      "estimatedShippingCharges": 13.0,
+      "estimatedDeliveryDate": ""
+    },
+    {
+      "carrierID": 3,
+      "carrierName": "DHL",
+      "carrierVariant": "Express Worldwide",
+      "estimatedShippingCharges": 15.0,
+      "estimatedDeliveryDate": ""
+    }
+  ]
+}

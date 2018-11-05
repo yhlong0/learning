@@ -1,0 +1,62 @@
+.App {
+  /*text-align: center;*/
+}
+
+.App-footer {
+  padding: 6px;
+  color: black;
+  background-color: #282c34;
+}
+
+.App-content {
+  padding-bottom: 2%;
+  /* padding-left: 10%; */
+  /* width: 80%; */
+  /* padding-right: 10%; */
+  min-height: 671px;
+  height: 671px;
+  
+  font-family: 'Roboto', sans-serif;
+}
+
+.pageContainer{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.header {
+  font-family: 'Merriweather', serif
+}
+
+.title-button {
+  color: white !important;
+  width: 115px;
+  text-transform: none !important;
+}
+
+.jss13, .jss19, .jss4, .jss8, .jss11 {
+  color: black !important;
+  background-color: white !important;
+}
+
+.jss19 {
+  box-shadow: none !important;
+}
+
+.jss526 {
+  height: 56px !important;
+  width: 226px !important;
+}
+
+.jss108, .jss111, .jss109 {
+  background-color: #02aeef !important;
+  color: white !important;
+}
+
+.jss100 {
+  color: #02aeef !important;
+}
+
+.jss571, .jss574 {
+  color: #02aeef !important;
+}

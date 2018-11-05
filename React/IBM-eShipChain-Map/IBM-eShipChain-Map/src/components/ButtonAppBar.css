@@ -1,0 +1,11 @@
+.logo-name {
+    height: 20px;
+    position: relative;
+    left: 7px;
+    bottom: 3px;
+}
+.header-bar {
+    position: relative;
+    bottom: 10px;
+    left: 28px;
+}
