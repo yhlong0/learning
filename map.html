@@ -34,14 +34,10 @@ test
 
             var infoWin = new google.maps.InfoWindow();
 
-            // Add some markers to the map.
-            // Note: The code uses the JavaScript Array.prototype.map() method to
-            // create an array of markers based on a given "locations" array.
-            // The map() method here has nothing to do with the Google Maps API.
             var boxMarkers = locations.map(function (location, i) {
                 var marker = new google.maps.Marker({
                     position: location,
-                    icon: './box.gif'
+                    icon: './box.png'
                 });
 
                 google.maps.event.addListener(marker, 'click', function (evt) {
@@ -56,6 +52,20 @@ test
                 var marker = new google.maps.Marker({
                     position: location,
                     icon: './redbox.png'
+                });
+
+                google.maps.event.addListener(marker, 'click', function (evt) {
+                    infoWin.setContent(location.info);
+                    infoWin.open(map, marker);
+                });
+
+                return marker
+            });
+
+            var blinkMarkers = blinkLocations.map(function (location, i) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    icon: './box.gif'
                 });
 
                 google.maps.event.addListener(marker, 'click', function (evt) {
@@ -114,7 +124,8 @@ test
                 ...shipMarkers, 
                 ...planeMarkers, 
                 ...truckMarkers,
-                ...redBoxMarkers
+                ...redBoxMarkers,
+                ...blinkMarkers
             ];
 
 
@@ -258,13 +269,36 @@ test
             '<p><b>Shipment ID:</b> 7789200004</p>' +
             '<p><b>Shipment Date:</b> 10/25/2018</p>' +
             '<p><b>Receiver:</b> John Bob</p> ' +
-            '<p><b>Scan Activities:</b> At local FedEx facility PORT HARCOURT null NG</p> ' +
-            '<p style="color:red"><b>Tracking Status:</b> Local weather delay - Delivery not attempted!.</p> ' +
+            '<p><b>Tracking Status:</b></p> ' +
+            '<p> In transit, waiting for deliever.</p>' +
+            '<p> 12/28 7:45 am Arrived at UPS location <b>Billings, MT</b></p>' +
+            '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
+            '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
+            '</div>' +
+            '</div>';
+
+        var contentString9 = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading" style="color:#2196f3">Tracked Package</h1>' +
+            '<div id="bodyContent">' +
+            '<p><b>Shipment ID:</b> 77892003304</p>' +
+            '<p><b>Shipment Date:</b> 10/25/2018</p>' +
+            '<p><b>Receiver:</b> John Bob</p> ' +
+            '<p><b>Tracking Status:</b> Local weather delay - Delivery not attempted!.</p> ' +
             '<p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>' +
             '<p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>' +
             '<p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> ' +
             '</div>' +
             '</div>';
+
+
+        var blinkLocations = [
+            { lat: 35.900762, lng: 139.642131, info: contentString9 },
+            { lat: 45.848175, lng: -108.387897, info: contentString9 },
+            { lat: 19.192271, lng: -99.373728, info: contentString9 },
+            { lat: 17.192271, lng: 83.373728, info: contentString9 },
+        ];
 
         var shipLocations = [
             { lat: 27.146281, lng: 132.808777, info: contentString7 },
@@ -460,7 +494,7 @@ test
             { lat: -42.734358, lng: 147.501315, info: contentString2 },
             { lat: -42.735258, lng: 147.438000, info: contentString2 },
             { lat: -43.999792, lng: 170.463352, info: contentString2 }
-        ]
+        ];
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
