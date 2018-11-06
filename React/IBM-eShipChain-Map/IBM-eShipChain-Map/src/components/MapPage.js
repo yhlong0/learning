@@ -20,14 +20,19 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultZoom={3}
     defaultCenter={{ lat: 25.062400, lng: 153.042605 }}
   >
-    <Marker 
-      position={{ lat: 32.070, lng: 121.266 }} 
-      options={{ icon: box }}
-    />
-    <Marker position={{ lat: 35.900762, lng: 139.642131 }} />
-    <Marker position={{lat: 45.848175, lng: -108.387897 }} />
-    <Marker position={{lat: 19.192271, lng: -99.373728 }} />
-    <Marker position={{lat: 17.192271, lng: 83.373728 }} />
+
+
+    <MarkerClusterer
+      averageCenter
+      enableRetinaIcons
+      gridSize={90}
+    >
+      <Marker position={{ lat: 35.900762, lng: 139.642131 }} />
+      <Marker position={{lat: 45.848175, lng: -108.387897 }} />
+      <Marker position={{lat: 19.192271, lng: -99.373728 }} />
+      <Marker position={{lat: 17.192271, lng: 83.373728 }} />
+      <Marker position={{lat: 34.679271, lng: 135.479528 }} />
+    </MarkerClusterer>
   </GoogleMap>
 ));
 
