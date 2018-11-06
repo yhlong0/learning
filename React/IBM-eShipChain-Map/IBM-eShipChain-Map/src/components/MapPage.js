@@ -22,11 +22,11 @@ const styles = theme => ({
 const markers = [
   {
     index: 1,
-    lat: 25.062400,
-    lng: 153.042605,
-    icon: box,
+    lat: 31.151151,
+    lng: 121.805615,
+    icon: blinkBox,
     info: <div>
-            <h1>Shanghai Pudong International Airport</h1>
+            <h1 style={{ color: '#2196f3' }}>Shanghai Pudong International Airport</h1>
             <div>
               <p><b>Shipment ID:</b> 123456789</p>
               <p><b>Shipment Date:</b> 11/01/2018</p>
@@ -37,18 +37,93 @@ const markers = [
   },
   {
     index: 2,
-    lat: 45.848175,
-    lng: 139.642131,
+    lat: 28.586,
+    lng: 77.187,
     icon: box,
     info: <div>
-            <h1>Shanghai Pudong International Airport</h1>
+            <h1 style={{color: 'green'}}>Delivered</h1>
             <div>
-              <p><b>Shipment ID:</b> 123456789</p>
-              <p><b>Shipment Date:</b> 11/01/2018</p>
-              <p><b>Receiver:</b> John Smith</p>
-              <p><b>Tracking Status:</b> At Shanghai airport waiting for customs clearance.</p>
+              <p><b>Shipment ID:</b> 5421589900</p>
+              <p><b>Delivery Date:</b> 11/02/2018</p>
+              <p><b>Destination:</b> Texarkana, AR US</p>
+              <p><b>Receiver:</b> Alice Smith</p> 
+              <p><b>Tracking Status:</b></p> 
+              <p> 12/29 10:45 am Delivered <b>New Delhi, India</b></p>
+              <p> 12/29 8:45 am on FedEx vehicle for delivery <b>New Delhi, India</b></p> 
+              <p> 12/29 7:10 am at local FedEx facility <b>New Delhi, India</b></p>
+              <p> 12/28 5:30 am Departed FedEx location <b>New Delhi, India</b></p>
+              <p> 12/28 7:45 am Arrived at FedEx location <b>Los Angeles, CA</b></p>
+              <p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>
+              <p> 12/26 7:36am at FedEx origin facility <b>Houston, TX</b> </p> 
             </div>
           </div>
+  },
+  {
+    index: 3,
+    lat: 27.146281,
+    lng: 132.808777,
+    icon: ship,
+    info: <div>
+            <h1 style={{color: '#2196f3'}}>Cargo Ship in transit</h1>
+            <p><b>Shipment ID:</b> 7789200004</p>
+            <p><b>Shipment Date:</b> 10/25/2018</p>
+            <p><b>Receiver:</b> John Bob</p> 
+            <p><b>Tracking Status:</b></p> 
+            <p> In transit, waiting for deliever.</p>
+            <p> 12/28 5:30 am Departed UPS location <b>Los Angeles, CA</b></p>
+            <p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>
+            <p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>
+            <p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p>
+          </div>
+  },
+  {
+    index: 4,
+    lat: 34.195281,
+    lng: -118.190,
+    icon: redBox,
+    info: <div>
+      <h1 style={{ color: 'red' }}>Delivery Exception</h1>
+      <p><b>Shipment ID:</b> 7789200004</p>
+      <p><b>Shipment Date:</b> 10/25/2018</p>
+      <p><b>Receiver:</b> John Bob</p>
+      <p><b>Tracking Status:</b> Local weather delay - Delivery not attempted!.</p> 
+      <p> 12/28 7:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>
+      <p> 12/27 7:20 am Picked up <b>Houston, TX</b> </p>
+      <p> 12/26 7:36am at UPS origin facility <b>Houston, TX</b> </p> 
+    </div>
+  },
+  {
+    index: 5,
+    lat: 30.640281,
+    lng: -122.368,
+    icon: plane,
+    info: <div>
+      <h1 style={{ color: '#2196f3' }}>Fedex plane in transit</h1>
+      <p><b>Shipment ID:</b> 77892022204</p>
+      <p><b>Shipment Date:</b> 10/25/2018</p>
+      <p><b>Receiver:</b> John Smith</p>
+      <p><b>Tracking Status:</b></p>
+      <p> 12/28 7:45 am Will arrived at UPS location <b>Los Angeles, CA</b></p>
+      <p> 12/27 7:20 am Picked up <b>New Delhi, India</b> </p>
+      <p> 12/26 7:36am at UPS origin facility <b>New Delhi, India</b> </p>
+    </div>
+  },
+  {
+    index: 6,
+    lat: 39.302,
+    lng: -95.009,
+    icon: truck,
+    info: <div>
+      <h1 style={{ color: '#2196f3' }}>UPS truck in transit</h1>
+      <p><b>Shipment ID:</b> 77892022204</p>
+      <p><b>Shipment Date:</b> 10/25/2018</p>
+      <p><b>Receiver:</b> John Smith</p>
+      <p><b>Tracking Status:</b></p>
+      <p> 12/29 5:45 pm Arrived at UPS location <b>Kansas City, KA</b></p>
+      <p> 12/28 11:45 am Arrived at UPS location <b>Los Angeles, CA</b></p>
+      <p> 12/27 7:20 am Picked up <b>New Delhi, India</b> </p>
+      <p> 12/26 7:36am at UPS origin facility <b>New Delhi, India</b> </p>
+    </div>
   }
 ];
   
@@ -105,13 +180,11 @@ class Map extends React.Component {
                 }
             </Marker>
           )}
-        }
       </MarkerClusterer>
     </GoogleMap>
     );
   }
 }
-
 const MapComponent = withScriptjs(withGoogleMap(Map));
 
 
