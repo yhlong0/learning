@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { actions, selectors } from "../redux";
 import { withStyles } from "@material-ui/core/styles";
+import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
 
 const styles = theme => ({
   root: {
