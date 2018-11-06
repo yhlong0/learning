@@ -11,7 +11,6 @@ import plane from '../img/air-freight.png';
 import ship from '../img/cargo-ship.png';
 import truck from '../img/delivery-truck.png';
 import redBox from '../img/redbox.png';
-import { extname } from "path";
 
 
 const styles = theme => ({
@@ -26,30 +25,30 @@ const markers = [
     lat: 25.062400,
     lng: 153.042605,
     icon: box,
-    info: `<div>
-            <h1 id="firstHeading" class="firstHeading">Shanghai Pudong International Airport</h1>
-            <div id="bodyContent">
+    info: <div>
+            <h1>Shanghai Pudong International Airport</h1>
+            <div>
               <p><b>Shipment ID:</b> 123456789</p>
               <p><b>Shipment Date:</b> 11/01/2018</p>
               <p><b>Receiver:</b> John Smith</p>
               <p><b>Tracking Status:</b> At Shanghai airport waiting for customs clearance.</p>
             </div>
-          </div>`
+          </div>
   },
   {
     index: 2,
     lat: 45.848175,
     lng: 139.642131,
     icon: box,
-    info: `<div>
-            <h1 id="firstHeading" class="firstHeading">Shanghai Pudong International Airport</h1>
-            <div id="bodyContent">
+    info: <div>
+            <h1>Shanghai Pudong International Airport</h1>
+            <div>
               <p><b>Shipment ID:</b> 123456789</p>
               <p><b>Shipment Date:</b> 11/01/2018</p>
               <p><b>Receiver:</b> John Smith</p>
               <p><b>Tracking Status:</b> At Shanghai airport waiting for customs clearance.</p>
             </div>
-          </div>`
+          </div>
   }
 ];
   
@@ -59,19 +58,21 @@ class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      showInfoIndex: 1
     }
   };
 
-  open = (markerIndex) => {
+  toggleInfoWindow = () => {
     this.setState({
-      isOpen: true
+      isOpen: !this.state.isOpen
     });
   }
 
-  close = () => {
+  showInfo(index, isOpen) {
     this.setState({
-      isOpen: false
+      isOpen: !isOpen,
+      showInfoIndex: index
     });
   }
 
@@ -93,18 +94,12 @@ class Map extends React.Component {
               key={marker.index} 
               position={{ lat: marker.lat, lng: marker.lng }}
               options={{ icon: marker.icon }}
-              onClick={() => this.open()}
+              onClick={() => this.showInfo(marker.index)}
             >
-                {this.state.isOpen &&
-                  <InfoWindow onCloseClick={() => this.setState({ isOpen: false })}>
+                {(this.state.isOpen && this.state.showInfoIndex == marker.index) &&
+                  <InfoWindow onCloseClick={() => this.toggleInfoWindow()}>
                     <div>
-                      <h1 id="firstHeading" class="firstHeading">Shanghai Pudong International Airport</h1>
-                      <div id="bodyContent">
-                        <p><b>Shipment ID:</b> 123456789</p>
-                        <p><b>Shipment Date:</b> 11/01/2018</p>
-                        <p><b>Receiver:</b> John Smith</p>
-                        <p><b>Tracking Status:</b> At Shanghai airport waiting for customs clearance.</p>
-                      </div>
+                      {marker.info}
                     </div>
                   </InfoWindow>
                 }
