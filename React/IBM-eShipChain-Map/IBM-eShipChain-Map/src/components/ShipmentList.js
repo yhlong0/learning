@@ -141,14 +141,24 @@ class ShipmentList extends Component {
 
               <Grid item xs={5} className={classes.centeredItem}>
                 {roleName == "shipper" || roleName == "eco" ? (
-                  <Button
-                    color="primary"
-                    className={classes.button}
-                    onClick={this.handleCreateNewShipmentBtn}
-                  >
-                    <AddCircleIcon className={classes.addIcon} />
-                    Create Shipment
-                </Button>
+                  <div>
+                    <Button
+                      color="primary"
+                      className={classes.button}
+                      onClick={this.handleCreateNewShipmentBtn}
+                    >
+                      <AddCircleIcon className={classes.addIcon} />
+                      Create Shipment
+                  </Button>
+                    <Button
+                      color="primary"
+                      className={classes.button}
+                      onClick={this.handleCreateNewShipmentBtn}
+                    >
+                      <AddCircleIcon className={classes.addIcon} />
+                      View Map
+                  </Button>
+                  </div>
                 ) : (
                     ""
                   )}

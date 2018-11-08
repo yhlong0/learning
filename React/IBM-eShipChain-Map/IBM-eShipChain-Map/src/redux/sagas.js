@@ -66,7 +66,7 @@ export function* fetchShipments(action) {
 		switch (userProfile.role) {
 		case "eco":
 		case "shipper":
-			shipmentEndPoint = `https://eship-shipment-service.mybluemix.net/shippers/${
+			shipmentEndPoint = `https://eship-shipment-service.mybluemix.net/api/v1/shippers/${
 				userProfile.username
 			}/orders`;
 			break;
