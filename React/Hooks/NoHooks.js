@@ -6,13 +6,21 @@ export default class Greeting extends React.Component {
         super(props);
         this.state = {
             name: 'Mary',
+            surname: 'Peter'
         }
         this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleSurnameChange = this.handleSurnameChange.bind(this);
     }
 
     handleNameChange(e) {
         this.setState({
             name: e.target.value
+        });
+    }
+
+    handleSurnameChange(e) {
+        this.setState({
+            surname: e.target.value
         });
     }
 
@@ -23,6 +31,12 @@ export default class Greeting extends React.Component {
                     <input 
                         value={this.state.name}
                         onChange={this.handleNameChange}
+                    />
+                </Row>
+                <Row label="Surname">
+                    <input
+                        value={this.state.surname}
+                        onChange={this.handleSurnameChange}
                     />
                 </Row>
             </section>
