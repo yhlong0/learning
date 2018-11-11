@@ -13,6 +13,14 @@ export default class Greeting extends React.Component {
         this.handleSurnameChange = this.handleSurnameChange.bind(this);
     }
 
+    componentDidMount() {
+        document.title = this.state.name + ' ' + this.state.surname;
+    }
+
+    componentDidUpdate() {
+        document.title = this.state.name + ' ' + this.state.surname;
+    }
+
     handleNameChange(e) {
         this.setState({
             name: e.target.value
