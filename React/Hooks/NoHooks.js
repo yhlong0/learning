@@ -7,18 +7,31 @@ export default class Greeting extends React.Component {
         super(props);
         this.state = {
             name: 'Mary',
-            surname: 'Peter'
+            surname: 'Peter',
+            width: window.innerWidth
         }
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleSurnameChange = this.handleSurnameChange.bind(this);
+        this.handleResize = this.handleResize.bind(this);
     }
 
     componentDidMount() {
         document.title = this.state.name + ' ' + this.state.surname;
+        window.addEventListener('resize', this.handleResize);
     }
 
     componentDidUpdate() {
         document.title = this.state.name + ' ' + this.state.surname;
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+    handleResize() {
+        this.setState({
+            width: window.innerWidth
+        });
     }
 
     handleNameChange(e) {
@@ -57,6 +70,9 @@ export default class Greeting extends React.Component {
                                 </Row>
                             )}
                         </LocaleContext.Consumer>
+                        <Row label="Width">
+                            {this.state.width}
+                        </Row>
                     </section>
                 )}
             </ThemeContext.Consumer>

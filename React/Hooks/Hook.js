@@ -11,7 +11,7 @@ export default function Greeting(props) {
 
     useEffect(() => {
         document.title = name + ' ' + surname;
-    })
+    });
 
     function handleNameChange(e) {
         setName(e.target.value);
