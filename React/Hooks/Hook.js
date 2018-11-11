@@ -4,7 +4,7 @@ import { ThemeContext, LocaleContext } from './context';
 
 export default function Greeting(props) {
     const [name, setName] = useState('Mary');
-    const [surname, setSurname] = useState('Peter');1
+    const [surname, setSurname] = useState('Peter');2
 
 
     const theme = useContext(ThemeContext);
