@@ -6,11 +6,24 @@ export default function Greeting(props) {
     const [name, setName] = useState('Mary');
     const [surname, setSurname] = useState('Peter');
 
+
     const theme = useContext(ThemeContext);
     const locale = useContext(LocaleContext);
 
     useEffect(() => {
         document.title = name + ' ' + surname;
+    });
+  
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     });
 
     function handleNameChange(e) {
@@ -37,6 +50,9 @@ export default function Greeting(props) {
             </Row>
             <Row label="Language">
                 {locale}
+            </Row>
+            <Row label="Width">
+                {width}
             </Row>
         </section>
     );
