@@ -51,7 +51,7 @@ const onButtonClick = (status) => {
     }
 }
 
-
+//Save conditions to Object. 
 
 const actions = {
     '1': ['processing', 'IndexPage'],
@@ -68,4 +68,30 @@ const onButtonClick = (status) => {
         pageName = action[1]
     sendLog(logName)
     jumpTo(pageName)
+}
+
+
+/**
+ * Save conditions to Map. 
+ * Map is a array of key-value pairs.
+ * 
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+ * 
+ * Map.prototype.get(key)
+ * Returns the value associated to the key, or undefined if there is none.
+*/
+
+const actions = new Map([
+    [1, ['processing', 'IndexPage']],
+    [2, ['fail', 'FailPage']],
+    [3, ['fail', 'FailPage']],
+    [4, ['success', 'SuccessPage']],
+    [5, ['cancel', 'CancelPage']],
+    ['default', ['other', 'Index']]
+])
+
+const onButtonClick = (status) => {
+    let action = actions.get(status) || actions.get('default')
+    sendLog(action[0])
+    jumpTo(action[1])
 }
