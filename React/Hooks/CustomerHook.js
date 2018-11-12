@@ -6,25 +6,15 @@ export default function Greeting(props) {
     const [name, setName] = useState('Mary');
     const [surname, setSurname] = useState('Peter');
 
-
     const theme = useContext(ThemeContext);
     const locale = useContext(LocaleContext);
+
+    const width = useWindowWidth();
 
     useEffect(() => {
         document.title = name + ' ' + surname;
     });
   
-    const [width, setWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    });
 
     function handleNameChange(e) {
         setName(e.target.value);
@@ -56,4 +46,19 @@ export default function Greeting(props) {
             </Row>
         </section>
     );
+}
+
+function useWindowWidth() {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    });
+    return width;
 }
