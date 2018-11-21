@@ -25,3 +25,9 @@ export.handler = (event, context, callback) => {
   callback(null, generatedNumber);
 };
 ```
+
+# Serverless
+
+https://serverless-stack.com/chapters/what-is-serverless.html
+
+
