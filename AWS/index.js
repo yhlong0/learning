@@ -3,8 +3,8 @@
 const aws = require('aws-sdk'); 
 
 const s3 = new aws.S3({ 
-    accessKeyId: "AKIAJS6LBP2N5E6XKDCA", 
-    secretAccessKey: "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" 
+    accessKeyId: "AKIAJS6LBP2N5E6", 
+    secretAccessKey: "CbbOQnoS+ADRh/BhxnlTC3jtTPn/3u6ky0" 
 }); 
 
 const getParams = {
