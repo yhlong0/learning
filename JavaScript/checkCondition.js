@@ -1,3 +1,29 @@
+
+/**
+* 给 on（check_func，matched_run_this_func）
+* .otherwise(run_this_if_no_match)
+*
+*/
+
+
+const matched = x => ({
+  on: () => matched(x),
+  otherwise: () => x
+});
+
+const match = x => ({
+  on: (pred, fn) => (pred(x) ? matched(fn(x)) : match(x)),
+  otherwise: fn => fn(x)
+});
+
+const a = match(50)
+  .on(x => x < 100, () => 0)
+  .on(x => x > 100, () => 1)
+  .otherwise(x => x + 100);
+
+console.log(a);
+
+
 /**
  * 按钮点击事件
  * @param {number} status 活动状态：1 开团进行中 2 开团失败 3 商品售罄 4 开团成功 5 系统取消
