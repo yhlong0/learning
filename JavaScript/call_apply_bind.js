@@ -10,27 +10,22 @@ greeting.call(customer2, 'Hello'); // Hello Nat
 
 
 
-let customer1 = { name: 'Leo', email: 'leo@gmail.com' };
-let customer2 = { name: 'Nat', email: 'nat@hotmail.com' };
-
-function greeting(text, text2) {
+function greeting2(text, text2) {
    console.log(`${text} ${this.name}, ${text2}`);
 }
 
-greeting.apply(customer1, ['Hello', 'How are you?']); // output Hello Leo, How are you?
-greeting.apply(customer2, ['Hello', 'How are you?']); // output Hello Natm How are you?
+greeting2.apply(customer1, ['Hello', 'How are you?']); // output Hello Leo, How are you?
+greeting2.apply(customer2, ['Hello', 'How are you?']); // output Hello Natm How are you?
 
 
 
-let customer1 = { name: 'Leo', email: 'leo@gmail.com' };
-let customer2 = { name: 'Nat', email: 'nat@hotmail.com' };
 
-function greeting(text) {
+function greeting3(text) {
    console.log(`${text} ${this.name}`);
 }
 
-let helloLeo = greeting.bind(customer1);
-let helloNat = greeting.bind(customer2);
+let helloLeo = greeting3.bind(customer1);
+let helloNat = greeting3.bind(customer2);
 
 helloLeo('Hello'); // Hello Leo
 helloNat('Hello'); // Hello Nat
