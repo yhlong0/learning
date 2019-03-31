@@ -28,4 +28,19 @@ out()
 //will print 30
 
 
+const debounce = function (fn, delayTime) {
+   let timeId;
+   
+   return function() {
+      let context = this,
+      let args = arguments;
+      
+      timeId && clearTimeout(timeout);
+      timeId = setTimeout(function {
+         fn.apply(context, args);
+      }, delayTime)
+   }
+}
+
+
 
