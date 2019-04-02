@@ -12,7 +12,19 @@ class Toggle extends Component {
   render() {
     return (
       <div>
-        <button>Show/Hide</button>
+        {this.state.on && <h1>Toggle Me</h1>}
+        <button onClick={this.toggle}>Show/Hide</button>
+      </div>
+    )
+  }
+}
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Toggle />
       </div>
     )
   }
