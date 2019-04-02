@@ -19,6 +19,30 @@ class Toggle extends Component {
   }
 }
 
+class RenderPropsToggle extends Component {
+  state = {
+    on: false,
+  }
+  
+  toggle = () => {
+    this.setState({
+      on: !this.state.on
+    })
+  }
+  
+  render() {
+    const { render } = this.props
+    return (
+      <div>
+        {render({
+          on: this.state.on,
+          toggle: this.toggle,
+        })}
+      </div>
+    )
+  }
+}
+
 
 class App extends Component {
   render() {
@@ -27,6 +51,12 @@ class App extends Component {
         <Toggle>
           <h1>This goes to props.children</h1>
         </Toggle>
+        <RenderPropsToggle render={({on, toggle}) => (
+          <div>
+            {on && <h1>Show Me</h1>}
+            <button onClick={toggle}>Show/Hide</button>
+          </div>
+        )} />
       </div>
     )
   }
