@@ -162,6 +162,87 @@ testString.match(lazyRegex); // ["cat"]
 
 ```
 
+#### Match starting string patterns
+- To test for a match of characters at the beginning of a string, use the caret ```^```, but outside of the character set
+
+```js
+
+const emmaAtFrontOfString = "Emma likes cats a lot.";
+const emmaNotAtFrontOfString = "The cats Emma likes are fluffy.";
+const startingStringRegex = /^Emma/;
+
+startingStringRegex.test(emmaAtFrontOfString); // true
+startingStringRegex.test(emmaNotAtFrontOfString); // false
+
+```
+
+#### Match ending string patterns
+- Use the dollar sign ```$``` at the end of a regex to check whether a pattern exists at the end of a string
+
+```js
+
+const emmaAtBackOfString = "The cats do not like Emma";
+const emmaNotAtBackOfString = "Emma loves the cats";
+const startingStringRegex = /Emma$/;
+
+startingStringRegex.test(emmaAtBackOfString); // true
+startingStringRegex.test(emmaNotAtBackOfString); // false
+
+```
+
+
+#### Matching all letters and numbers
+- Use the ```\word``` shorthand
+
+```js
+
+const longHand = /[A-Za-z0-9_]+/;
+const shortHand = /\w+/;
+const numbers = "42";
+const myFavoriteColor = "magenta";
+
+longHand.test(numbers); // true
+shortHand.test(numbers); // true
+longHand.test(myFavoriteColor); // true
+shortHand.test(myFavoriteColor); // true
+
+```
+
+
+#### Match everything except letters & numbers
+- You can use for the opposite of ```\w``` with ```\W```
+
+```js
+
+const noAlphaNumericCharRegex = /\W/gi;
+const weirdCharacters = "!_$!!";
+const alphaNumericCharacters = "ab283AD";
+
+noAlphaNumericCharRegex.test(weirdCharacters); // true
+noAlphaNumericCharRegex.test(alphaNumericCharacters); // false
+
+```
+
+
+#### Match all numbers and non-numbers
+- You can use a character set ```[0-9]```, or use the shorthand ```\d``` to match numbers
+- You can use the opposite of ```\d``` with ```\D``` to match non-numbers
+
+```js
+
+const digitsRegex = /\d/g;
+const stringWithDigits = "My cat eats $20.00 worth of food a week.";
+
+stringWithDigits.match(digitsRegex); // ["2", "0", "0", "0"]
+
+const nonDigitsRegex = /\D/g;
+const stringWithLetters = "101 degrees";
+
+stringWithLetters.match(nonDigitsRegex); // [" ", "d", "e", "g", "r", "e", "e", "s"]
+
+```
+
+
 ####
 - 
 
@@ -171,6 +252,25 @@ testString.match(lazyRegex); // ["cat"]
 
 ```
 
+
+####
+- 
+
+```js
+
+
+
+```
+
+
+####
+- 
+
+```js
+
+
+
+```
 
 
 [Reference](https://dev.to/emmawedekind/regex-cheat-sheet-2j2a)
