@@ -243,32 +243,84 @@ stringWithLetters.match(nonDigitsRegex); // [" ", "d", "e", "g", "r", "e", "e", 
 ```
 
 
-####
-- 
+#### Matching whitespace and non-whitespace
+- Use ```\s``` to match white space and carriage returns
+- Use ```\S``` to match non-whitespace
 
 ```js
 
+const sentenceWithWhitespace = "I like cats!"
+var spaceRegex = /\s/g;
+whiteSpace.match(sentenceWithWhitespace); // [" ", " "]
 
+const sentenceWithWhitespace = "C a t"
+const nonWhiteSpaceRegex = /\S/g;
+sentenceWithWhitespace.match(nonWhiteSpaceRegex); // ["C", "a", "t"]
 
 ```
 
 
-####
-- 
+#### Matching character counts
+- You can specify a specific number of characters in a row using ```{lowerBound, upperBound}```
 
 ```js
 
+const regularHi = "hi";
+const mediocreHi = "hiii";
+const superExcitedHey = "heeeeyyyyy!!!";
+const excitedRegex = /hi{1,4}/;
 
+excitedRegex.test(regularHi); // true
+excitedRegex.test(mediocreHi); // true
+excitedRegex.test(superExcitedHey); //false
 
 ```
 
 
-####
-- 
+#### Matching lowest number of character counts
+- You can define only a minimum number of character requirements with ```{lowerBound,}```
+- This is called a quantity specifier
 
 ```js
 
+const regularHi = "hi";
+const mediocreHi = "hiii";
+const superExcitedHey = "heeeeyyyyy!!!";
+const excitedRegex = /hi{2,}/;
 
+excitedRegex.test(regularHi); // false
+excitedRegex.test(mediocreHi); // true
+excitedRegex.test(superExcitedHey); //false
+
+```
+
+#### Matching an exact number of character counts
+- You can specify the exact number of character requirements with ```{requiredCount}```
+
+```js
+
+const regularHi = "hi";
+const bestHi = "hii";
+const mediocreHi = "hiii";
+const excitedRegex = /hi{2}/;
+
+excitedRegex.test(regularHi); // false
+excitedRegex.test(bestHi); // true
+excitedRegex.test(mediocreHi); //false
+
+```
+
+#### Matching all or none of a character
+- To check whether a character exists, use the ```?```
+
+```js
+
+const britishSpelling = "colour";
+const americanSpelling = "Color";
+const languageRegex = /colou?r/i;
+
+languageRegex.test(britishSpelling); // true
+languageRegex.test(americanSpelling); // true
 
 ```
 
