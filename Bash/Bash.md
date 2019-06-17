@@ -20,3 +20,9 @@ Output:
 $ export PS1="\e[0;31m[\u@\h \W]\$ \e[m "
 
 ```
+
+
+
+#### Reference
+
+> [Custom prompt](https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
