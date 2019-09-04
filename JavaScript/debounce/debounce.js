@@ -1,8 +1,16 @@
-var count = 1;
-var container = document.getElementById('container');
+let count = 1;
+let container = document.getElementById("container");
+
+function debounce(func, wait) {
+  let timeout;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(func, wait);
+  };
+}
 
 function getUserAction() {
-    container.innerHTML = count++;
-};
+  container.innerHTML = count++;
+}
 
-container.onmousemove = getUserAction;
+container.onmousemove = debounce(getUserAction, 1000);
