@@ -5,7 +5,10 @@ function debounce(func, wait) {
   let timeout;
   return function() {
     const context = this;
+    //The arguments that passed to this function, in this case is mouseEvent
+    console.log("arguments:", arguments);
     const args = arguments;
+
     clearTimeout(timeout);
     timeout = setTimeout(function() {
       func.apply(context, args);
