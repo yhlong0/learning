@@ -23,7 +23,7 @@ Now you want to bring new changes from master to feature branch.
 
 - Same thing as example above, now let's see how git rebase works.
 
-- This '**destroy**' `f1` commit in feature branch. Copy the new commit after m2 from master branch, in this case `m3`, then copy new commit `f1` from feature branch. Align them as if moves the entire feature branch to begin on the tip of the master branch `m3`.
+- This '**destroy**' `f1` commit in feature branch. Copy the new commit `m3` from master branch, then copy the new commit `f1` from feature branch. Align them as if moves the entire feature branch to begin on the tip of the master branch `m3`.
 
 ```bash
 # Before rebase
