@@ -10,8 +10,8 @@ Now you want to bring new changes from master to feature branch.
 - This creates a new “merge commit” `m4` in the feature branch that ties together the histories of both branches
 ```
  master branch:    m1  --  m2  -- m3   
-                           |          \  
- feature branch:           └----- f1 -- m4
+                           |        \  
+ feature branch:           └-- f1 -- m4
 
 
 git checkout feature
