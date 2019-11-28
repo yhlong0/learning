@@ -1,7 +1,7 @@
 # Cheatsheet for Git
 
 
-### git merge vs git rebase
+### Git merge vs rebase
 
 - Git Merge
 
@@ -16,6 +16,29 @@ Now you want to bring new changes from master to feature branch.
 git checkout feature
 git merge master
 ```
+
+- Git Rebase
+
+You created feature branch from m2 and commit f1, while you are working on feature branch, other people commit m3.
+Now you want to bring new changes from master to feature branch.
+```bash
+# Before rebase
+ master branch:    m1  --  m2  -- m3   
+                           |           
+ feature branch:           └----- f1 
+
+ 
+# After rebase
+ master branch:    m1  --  m2  -- m3   
+                           |      | 
+ feature branch:           └----- m3 -- f1 
+ 
+
+git checkout feature
+git rebase master
+```
+
+This moves the entire feature branch to begin on the tip of the master branch(m3), effectively incorporating all of the new commits in master.
 
 
 After you push several commits to remote, revert back to previous commit.    - *1 - *2 - *3 -  
