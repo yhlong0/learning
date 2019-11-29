@@ -2,6 +2,8 @@
 
 ### Git Basic
 
+- Configuration 
+
 ```bash
 # Check version
 $ git --version
@@ -14,7 +16,11 @@ $ git config --list
 # Check help documentation.
 $ git help config
 $ git config --help
+```
 
+- Clone, add, reset
+
+```bash
 # Initialize a repo
 $ git init
 
@@ -39,11 +45,22 @@ $ git reset filename
 # Check commit history
 $ git log
 
-# Create or switch to feature branch
+```
+
+- Branchs Operation
+
+```bash
+# Create a feature branch
 $ git checkout -b feature
 
-# List branchs
+# Switch/Checkout a branch
+$ git checkout feature
+
+# List all branchs include remote
 $ git branch -a
+
+# List local branchs
+$ git branch
 
 # Delete feature branch
 $ git branch -d feature
