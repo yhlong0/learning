@@ -3,6 +3,42 @@
 ### Git Basic
 
 ```bash
+# Check version
+$ git --version
+
+# Config your git and list configuration.
+$ git config --global user.name "Your Name"
+$ git config --global user.email "abc@abc.com"
+$ git config --list
+
+# Check help documentation.
+$ git help config
+$ git config --help
+
+# Initialize a repo
+$ git init
+
+# Cloning a remote repo
+$ git clone remote_url
+$ git clone remote_url ./folder_path
+
+# Check status before commit
+$ git status
+
+# Add files to staging area
+$ git add -A
+$ git add -A sub_directory/
+
+# Commit a file
+$ git commit -m "Describe your commit"
+
+# Remove files from staging area
+$ git reset
+$ git reset filename
+
+# Check commit history
+$ git log
+
 # Create or switch to feature branch
 $ git checkout -b feature
 
