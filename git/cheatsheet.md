@@ -1,5 +1,62 @@
 # Cheatsheet for Git
 
+### Git Basic
+
+```bash
+# Create or switch to feature branch
+$ git checkout -b feature
+
+# List branchs
+$ git branch -a
+
+# Delete feature branch
+$ git branch -d feature
+
+# 
+$ 
+```
+
+### Git stash
+
+Stash change, switch branch, come back working on it.
+
+```bash
+$ git branch feature
+$ git checkout feature
+
+# Modify the files
+
+# Check what changed
+$ git diff
+
+$ git stash save "Worked on new feature"
+$ git diff
+$ git status
+# Nothing will show up.
+
+# List all the things stashed. 
+$ git stash list
+stash@{0}: On master: test
+
+# Apply the change and keep the stash
+$ git stash apply stash@{0}
+
+# Grab the top item in the list and remove it from the stash
+$ git stash pop
+
+# Drop/remove the item in stash
+$ git stash drop stash@{0}
+
+# Bring changes from one branch to another one. 
+$ git checkout master
+# Modify the files
+$ git stash save "add new feature"
+$ git checkout feature
+$ git stash pop
+
+# Clean everything from the stash.
+$ git stash clear
+```
 
 ### Git merge vs rebase
 
@@ -14,8 +71,8 @@ Now you want to bring new changes from master to feature branch.
  feature branch:           └-- f1 -- m4
 
 
-> git checkout feature
-> git merge master
+$ git checkout feature
+$ git merge master
 ```
 
 
@@ -43,8 +100,8 @@ Now you want to bring new changes from master to feature branch.
                                   |
  feature branch:                  └ -- f1' 
 
-> git checkout feature
-> git rebase master
+$ git checkout feature
+$ git rebase master
 ```
 
 
