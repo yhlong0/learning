@@ -163,31 +163,107 @@ $ git rebase master
 
 
 ### Revert Change
-After you push several commits to remote, revert back to previous commit.    - *1 - *2 - *3 -  
 
-Find commit hash.
-```
-git log
+- Made change to the file, undo the change
 
-(dev)└─> $ git log
-commit 358e0a123dbf38c6c766f517187d96ee625d9229 (HEAD -> dev, origin/dev, origin/HEAD)
-Merge: 856ae03 2ad5852
-Author: Tammishetti, Nithin (Contractor) <Nithin_Tammishetti@comcast.com>
-Date:   Wed Apr 24 16:31:45 2019 -0400
-
-    Merge pull request #14 from ngan-de/node
-    
-
-Me(hyang682@NJSML-1612918)-(0)-(02:10 PM Fri May 03)
-Info-(~/Documents/Projects/Serverless/serverless-apis)-(10 files, 312 B)
-(dev)└─> $ git log
-commit 358e0a123dbf38c6c766f517187d96ee625d9229 (HEAD -> dev, origin/dev, origin/HEAD)
-Merge: 856ae03 2ad5852
-Author: Tammishetti, Nithin (Contractor) <Nithin_Tammishetti@comcast.com>
+```bash
+$ git checkout fileYouChanged
 ```
 
-Run revert command and commit change. 
+- Modify last commit message
+
+```bash
+$ git commit --amend -m "Modify last commit"
 ```
-git revert --no-commit 358e0a123dbf38c6c766f517187d96ee625d9229..HEAD
-git commit
+
+- forgot to commit a file
+
+```bash
+$ git add forgotFile
+$ git commit --amend
+$ git log --stat
+```
+It will show a text editor with last commit message, you can modify the message or just save the file.
+
+
+- Master and feature branch, accidently commit to master branch, need to move those commits to feature branch.
+
+```bash
+# Copy commit to right branch
+$ git log
+$ git checkout feature
+$ git cherry-pick #commitHashFromMaster#
+
+# Remove the wrong commit
+$ git checkout master
+$ git log
+$ git reset --hard #commitHashToReset#
+```
+
+- Git reset/clean
+
+```bash
+# After soft reset, change files will be in staging.
+$ git reset --soft #commitHash#
+
+# Default option = mixed, change file will be in working directory.
+$ git reset #commitHash#
+
+# It will get rid of any tracked file changes. But untracked file will still be there
+$ git reset --hard #commitHash#
+
+# Get rid of untracked file and directory -d directory, -f file. 
+# If you accidently unzip a lot files, could use it to clean up.
+$ git clean -df
+```
+
+- Recover from git reset hard
+
+```bash
+$ git reflog
+# Grab #commitHash# 
+$ git checkout #commitHash#
+# You will be in detached head state, create new branch
+$ git branch backup
+```
+
+
+- Undo some commits which other people already pull those changes.
+```bash
+$ git log
+
+commit #SecondCommitHash#
+Author: Hailong Yang
+Date: xxxx
+  Commit message second
+
+commit #FirstCommitHash#
+Author: Hailong Yang
+Date: xxxx
+  Commit message first
+
+# Put the commit hash which you want to undo.
+$ git revert #SecondCommitHash#
+
+# Save commit message. :wq
+
+$ git log
+
+commit #ThirdCommitHash#
+Author: Hailong Yang
+Date: xxxx
+  Revert "Commit message second"
+  This reverts commit #SecondCommitHash#
+
+commit #SecondCommitHash#
+Author: Hailong Yang
+Date: xxxx
+  Commit message second
+
+commit #FirstCommitHash#
+Author: Hailong Yang
+Date: xxxx
+  Commit message first
+  
+$ git diff #SecondCommitHash# #ThirdCommitHash#
 ```
