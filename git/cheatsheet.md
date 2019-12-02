@@ -231,7 +231,9 @@ $ git branch backup
 - Undo some commits which other people already pull those changes.
 ```bash
 $ git log
-
+```
+Output from git log:
+```
 commit #SecondCommitHash#
 Author: Hailong Yang
 Date: xxxx
@@ -241,14 +243,19 @@ commit #FirstCommitHash#
 Author: Hailong Yang
 Date: xxxx
   Commit message first
-
-# Put the commit hash which you want to undo.
+```
+Put the commit hash which you want to undo:
+```bash
 $ git revert #SecondCommitHash#
 
 # Save commit message. :wq
+```
 
+```bash
 $ git log
-
+```
+Output after revert:
+```
 commit #ThirdCommitHash#
 Author: Hailong Yang
 Date: xxxx
@@ -264,6 +271,8 @@ commit #FirstCommitHash#
 Author: Hailong Yang
 Date: xxxx
   Commit message first
-  
+```
+Check difference between commits
+```bash
 $ git diff #SecondCommitHash# #ThirdCommitHash#
 ```
