@@ -212,7 +212,7 @@ $ git reset #commitHash#
 # It will get rid of any tracked file changes. But untracked file will still be there
 $ git reset --hard #commitHash#
 
-# Get rid of untracked file and directory -d directory, -f file. 
+# Get rid of untracked file and directory -d directory, -f file,  -n dry run.
 # If you accidently unzip a lot files, could use it to clean up.
 $ git clean -df
 ```
