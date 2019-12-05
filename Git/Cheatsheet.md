@@ -64,9 +64,6 @@ $ git branch
 
 # Delete feature branch
 $ git branch -d feature
-
-# 
-$ 
 ```
 
 ### Git stash
