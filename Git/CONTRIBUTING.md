@@ -7,15 +7,10 @@ You **always** want to look at this file *before* contributing. In here you shou
 steps that you need to take to set up your development environment as well as instructions
 for coding standards and contributing guidelines.
 
-You'll notice that when this file is present, GitHub will give you an alert when creating
-a new issue, indicating that you should check out the guidelines first:
-
-![contributing-notice](other/contributing-notice.png)
-
 ## Acceptable Contributions
 
 This package's purpose is really kind of useless as a node package. I created it to
-demonstrate how to contribute to Open Source projects. However, I still have standards!
+demonstrate how to contribute to a projects. However, I still have standards!
 I only accept pull requests that:
 
 - fix bugs for existing functions
