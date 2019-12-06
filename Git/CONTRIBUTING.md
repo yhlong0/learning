@@ -38,16 +38,15 @@ You're going to need to have those things installed to contribute to this projec
 
 1. Fork the repo
 2. Clone your fork
-3. Create a branch
-4. Run `npm install`
-5. Run `npm t && npm run build`. If everything works, then you're ready to make changes.
-6. Run `npm run test:watch`. See that it's watching your file system for changes.
-7. Make your changes and try to make the tests pass. If you can't or need help then commit what you have with `--no-verify` and make a PR
-8. If you get things working, add your changed files with `git add` and run `npm run commit` to get an interactive prompt for creating a commit message that follows [our standards](https://github.com/stevemao/conventional-changelog-angular/blob/master/convention.md). You'll notice that there are git hooks in place which will run testing, linting, etc. (unless you commit with `--no-verify`).
-9. Push your changes to your fork with `git push`
-10. Create a pull request.
-11. Iterate on the solution.
-12. Get merged! 🎉 🎊
+3. Create a local branch
+4. Setup upstream. `git remote add upstream git@github.comcast.com:tap/tap.git`
+5. Run `npm install`
+6. Make changes and add your changed files with `git add` and run `git commit` for creating a commit message that follows [our standards](https://github.com/stevemao/conventional-changelog-angular/blob/master/convention.md).
+5. Pull down any changes and sync the local repo with the central repo. `git pull upstream dev` 
+7. Push your changes up to your fork `git push origin dev`
+8. Create a pull request.
+9. Iterate on the solution.
+10. Get merged! 🎉 🎊
 
 ## Commit messages
 
