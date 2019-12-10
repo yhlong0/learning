@@ -53,17 +53,24 @@ $ git log
 # Create a feature branch
 $ git checkout -b feature
 
-# Switch/Checkout a branch
+# Switch/Checkout a branch(If remote has a feature branch, git will create a local feature branch)
 $ git checkout feature
 
 # List all branchs include remote
 $ git branch -a
+
+# List remote branchs
+$ git branch -r
 
 # List local branchs
 $ git branch
 
 # Delete feature branch
 $ git branch -d feature
+
+# Remote origin/upstream repo feature branch delete, use prune clean up local branch.
+$ git remote prune origin
+$ git remote prune upstream
 ```
 
 ### Git stash
