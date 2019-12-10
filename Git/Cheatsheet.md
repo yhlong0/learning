@@ -173,6 +173,18 @@ $ git merge master
 
 $ git checkout feature
 $ git rebase master
+
+# Bring upstream/master commits to current branch. Interactive mode. 
+$ git rebase -i upstream/master
+
+# Pick, reword or squash the commits, then save the script. 
+
+pick f7f3f6d changed my name a bit
+reword f7a3236d change commit message
+squash 310154e updated README formatting and added blame
+squash a5f4a0d added cat-file
+
+:wq
 ```
 
 
