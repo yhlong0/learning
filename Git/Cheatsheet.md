@@ -53,8 +53,11 @@ $ git pull origin dev
 - Branchs Operation
 
 ```bash
-# Create a feature branch
+# Create a feature branch and switch to it.
 $ git checkout -b feature
+# Equal to below
+$ git branch feature
+$ git checkout feature
 
 # Switch/Checkout a branch(If remote has a feature branch, git will create a local feature branch)
 $ git checkout feature
@@ -67,6 +70,14 @@ $ git branch -r
 
 # List local branchs
 $ git branch
+
+# Rename a branch
+$ git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME
+
+# Track a remote branch
+$ git branch --set-upstream-to origin/BRANCH
+# Or you can use the -u flag(upstream) when you make first push
+$ git push -u origin BRANCH
 
 # Delete feature branch
 $ git branch -d feature
