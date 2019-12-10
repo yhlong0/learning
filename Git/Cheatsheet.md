@@ -18,7 +18,7 @@ $ git help config
 $ git config --help
 ```
 
-- Clone, add, reset
+- Clone, add, reset, pull
 
 ```bash
 # Initialize a repo
@@ -44,6 +44,9 @@ $ git reset filename
 
 # Check commit history
 $ git log
+
+# Fetch changes from remote origin repo. Merge remote dev to local dev branch. 
+$ git pull origin dev
 
 ```
 
