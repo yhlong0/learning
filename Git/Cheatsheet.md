@@ -38,6 +38,8 @@ $ git add -p
 
 # Commit a file
 $ git commit -m "Describe your commit"
+# Commit bypass the git hook 
+$ git commit --no-verify
 
 # Remove files from staging area
 $ git reset
