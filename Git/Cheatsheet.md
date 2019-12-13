@@ -47,11 +47,14 @@ $ git reset filename
 $ git log
 $ git log --oneline --graph --all --decorate
 
-# Fetch all changes from origin
-$ git fetch origin 
+# Add cowork repo as remote.
+git remote coworkers_repo git@bitbucket.org:coworker/coworkers_repo.git
 
-# Only fetch origin featureBranch changes to local. 
-$ git fetch origin featureBranch
+# Fetch all changes from cowork repo
+$ git fetch coworkers_repo 
+
+# Only fetch coworkers_repo featureBranch changes to local. 
+$ git fetch coworkers_repo featureBranch
 
 # Fetch changes from remote origin repo. Merge remote dev to local dev branch. 
 $ git pull origin dev
