@@ -47,6 +47,12 @@ $ git reset filename
 $ git log
 $ git log --oneline --graph --all --decorate
 
+# Fetch all changes from origin
+$ git fetch origin 
+
+# Only fetch origin featureBranch changes to local. 
+$ git fetch origin featureBranch
+
 # Fetch changes from remote origin repo. Merge remote dev to local dev branch. 
 $ git pull origin dev
 
