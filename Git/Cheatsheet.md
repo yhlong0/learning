@@ -34,6 +34,7 @@ $ git status
 # Add files to staging area
 $ git add -A
 $ git add -A sub_directory/
+$ git add -p
 
 # Commit a file
 $ git commit -m "Describe your commit"
@@ -44,6 +45,7 @@ $ git reset filename
 
 # Check commit history
 $ git log
+$ git log --oneline --graph --all --decorate
 
 # Fetch changes from remote origin repo. Merge remote dev to local dev branch. 
 $ git pull origin dev
