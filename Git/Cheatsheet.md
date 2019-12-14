@@ -49,8 +49,11 @@ $ git reset filename
 $ git log
 $ git log --oneline --graph --all --decorate
 
-# Add cowork repo as remote.
-git remote coworkers_repo git@bitbucket.org:coworker/coworkers_repo.git
+# Add/remove/rename cowork repo as remote.
+git remote add coworkers_repo git@bitbucket.org:coworker/coworkers_repo.git
+git remote rm coworker_repo
+git remote rename coworker_repo coworker_repo_newname
+
 
 # Fetch all changes from cowork repo
 $ git fetch coworkers_repo 
