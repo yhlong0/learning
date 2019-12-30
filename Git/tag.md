@@ -61,6 +61,7 @@ v2
 v3
 
 $ git tag -d v1
+
 v2
 v3
 ```
