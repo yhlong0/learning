@@ -51,3 +51,16 @@ $ git push origin v1.2
 $ git checkout v1.2
 ```
 
+- Deleting Tags
+
+```bash
+$ git tag
+
+v1
+v2
+v3
+
+$ git tag -d v1
+v2
+v3
+```
