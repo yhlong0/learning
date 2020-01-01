@@ -8,8 +8,11 @@
 
 ###  1. Static 
 
-Default position, z-index doesn't work with `position: static`
+Default position, elements follow the document flow. `top | right | bottom | left` doesn't work with `position: static`
 
+###  2. Relative
+
+Similar to static position but you could use `top | right | bottom | left` to change position of the element relative to where the document normally be. (lift it up and move it, the element still occupied original space)
 
 ```html
 <html>
@@ -20,7 +23,8 @@ Default position, z-index doesn't work with `position: static`
   }
   
   .child-one {
-  
+    position: relative;
+    top: 10px;
   }
   
   .child-two {
