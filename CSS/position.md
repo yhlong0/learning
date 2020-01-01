@@ -14,6 +14,8 @@ Default position, elements follow the document flow. `top | right | bottom | lef
 
 Similar to static position but you could use `top | right | bottom | left` to change position of the element relative to where the document normally be. (lift it up and move it, the element still occupied original space)
 
+<img src="./images/image.png" />
+
 ```html
 <html>
   <title>CSS Position</title>
