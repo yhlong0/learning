@@ -35,6 +35,7 @@ function bfs(start) {
     });
   }
   console.log("parentNode:", parentNode);
+  //parentNode: [ null, 0, 0, 1, 3, 2, null, null, null ]
   return parentNode;
 }
 
@@ -53,5 +54,8 @@ while (parentNode !== null) {
   steps++;
 }
 
-console.log("Path:", path.reverse());
-console.log("Steps:", steps);
+console.log("Path:", path.reverse());  //Path: [ 0, 1, 3 ]
+console.log("Steps:", steps);  //Steps: 3
+
+
+
