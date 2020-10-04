@@ -153,11 +153,16 @@ $ git stash clear
 Now you want to bring new changes from master to feature branch.
 - This creates a new “merge commit” `m4` in the feature branch that ties together the histories of both branches
 ```bash
+# Before merge
  master branch:    m1  --  m2  -- m3   
-                           |        \  
- feature branch:           └-- f1 -- m4
+                           |        
+ feature branch:           └-- f1  
 
-
+# After merge
+ master branch:    m1  --  m2  -- m3   
+                           |        \
+ feature branch:           └-- f1 -- m3 -- m4
+ 
 $ git checkout feature
 $ git merge master
 ```
@@ -173,19 +178,17 @@ $ git merge master
 # Before rebase
   master branch:    m1  --  m2  -- m3   
                             |           
-  feature branch:           └----- f1 
-
+  feature branch:           └-- f1 (#hash001)
  
-# During rebase
-  master branch:    m1  --  m2  -- m3   
-                            |      | 
-  feature branch:           └----- m3' -- f1' 
- 
+ # During rebase
+ master branch:    m1  --  m2  -- m3   
+                           |      
+ feature branch:           └   -- m3 -- f1' (#hash002)
  
 # After rebase
  master branch:    m1  --  m2  -- m3   
                                   |
- feature branch:                  └ -- f1' 
+ feature branch:                  └ -- f1' (#hash002)
 
 $ git checkout feature
 $ git rebase master
