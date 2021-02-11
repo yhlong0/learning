@@ -28,9 +28,17 @@ Result: describe the outcome of your actions, how did the event end. What did yo
   - Data issue, user not familiar with new tool
  
  
-4. AP stacking issue.
-  - version
-  
+4. AP stacking issue.(bias for action)
+  Feature is in production, people can create AP on top of another AP.
+  Task: Data is incorrect, need to fix it.
+  Actions: 1. work on the code, take long time. 2. work on db, quickly update. 
+  Result: split team, follow a procedure update db, make copy, write update time, user. another team work on the code. 
+
+5. Missing Nodes/Duplicate Nodes issue
+
+6. (incomplete info at the begin)Data incorrect for downstream system(node Housing). need the field to correlate the roll truck to the field. 
+
+7. 
 
 5. CRD Tool that no one use. 
    - Engineer spend long time to prepare a config and a lot of manual work
