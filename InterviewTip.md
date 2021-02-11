@@ -38,7 +38,7 @@ Result: describe the outcome of your actions, how did the event end. What did yo
 
 6. (incomplete info at the begin)Data incorrect for downstream system(node Housing). need the field to correlate the roll truck to the field. 
 
-7. 
+7. Repeat UI data and causing db doc size over 30 MB
 
 5. CRD Tool that no one use. 
    - Engineer spend long time to prepare a config and a lot of manual work
