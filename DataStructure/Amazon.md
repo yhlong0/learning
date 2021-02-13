@@ -5,12 +5,18 @@ A word should not have multiple instances of a cell.
 
 Example:
 
+```
 Input dictionary : [CAT, HAPPY, AMAZON, TAIL]
+
 Input Board :
 C C N F
 T A I H
 Y P L A
 F F P P
+
+Output: [CAT, TAIL]
+
+```
 
 
 
