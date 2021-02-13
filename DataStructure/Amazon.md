@@ -11,3 +11,8 @@ C C N F
 T A I H
 Y P L A
 F F P P
+
+
+
+#############################
+Giving a package s/m/l, find a open locker can fit. A locker has s/m/l and small package can be fit in large locker.
