@@ -12,18 +12,11 @@ const getMaxArea = (heights) => {
   let maxArea = area(heights, left, right);
 
   while (left !== right) {
+    maxArea = Math.max(maxArea, area(heights, left, right));
     if (heights[right] > heights[left]) {
       left = left + 1;
-      const newArea = area(heights, left, right);
-      if (newArea > maxArea) {
-        maxArea = newArea;
-      }
     } else {
       right = right - 1;
-      const newArea = area(heights, left, right);
-      if (newArea > maxArea) {
-        maxArea = newArea;
-      }
     }
   }
 
