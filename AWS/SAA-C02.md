@@ -60,7 +60,7 @@
 
 8. Hibernate
 9. EBS storage (Elastic Block Store)
-
+   - 1 IOPS = 256KB I/O
    - By default, the root volume for an AMI backed by Amazon EBS is deleted when the instance terminates. Non-root EBS volumes remain available even after you terminate an instance.
    - snapshots
    - AMI
