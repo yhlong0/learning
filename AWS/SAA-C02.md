@@ -116,6 +116,11 @@
    - Scaling Policies
      - Launch configuration(old), ASG based on configuration launch a specific instances type, can't do multiple instances types using on-demain and spot. To update configuration, need to create a new one and modify ASG to use this new config.
      - launch template is more power, multiple instance types, desired scale, performance and cost.
+   - Scaling Types
+     - Manual Scaling
+     - Dynamic scaling(need cloudWatch alarm) 1. Target tracking (for step and simple scaling, specify the high and low thresholds for the alarm, define add or remove, how many, set to exact size) 2. Step scaling, better choice, no cool down  3. Simple scaling, based on single alarm, has cool down period before responding to additional alarms. See effects before scale again. 
+     - Predictive scaling(ML, history data)  increase the number of EC2 instances in advance of daily and weekly patterns in traffic flows.  high use regular hours, low use evening weekends Recurring on-and-off workload app take long time initialize during scale out event. forecast only mode, collect data forecast and scale mode, really start make change. 
+     - Scheduled scaling
 4. Elastic IP Address(EIP) 5 per region, due to IPv4 scarce
 5. Availability Zones are all within 100 km (60 miles)
 
@@ -140,6 +145,9 @@
 5. S3 Intelligent-Tiering, for unknown log access pattern, one tier for frequent access, one lower-cost tier optimized for infrequent access.
 6. Set Origin Access Identity to only allow cloudFront access to the s3 files.
 7. By default, s3 object is owned by aws account that uploaded it, if you want bucket owner able to access it, need to explicityly grant them.
+8. S3 **Transfer acceleration** transfers of files over long distances between your client and an S3 bucket. Takes advantage of CloudFront. As the data arrives at an edge location, the data is routed to Amazon S3 over an optimized network path. Use case: Global customers upload files to a centralized bucket. Transfer a regular basis across continents.
+9. **Requester Pays buckets**, the requester instead of the bucket owner pays the cost of the request and the data download from the bucket. The bucket owner always pays the cost of storing data. (Share s3 with your customers)
+
 
 ### DynamoDB
 
@@ -208,8 +216,9 @@ Transfer Family provides fully managed support for file transfers directly into 
 2. Can combine with WAF to limit access only to certain IPs and etc.
 3. Price classes provide you an option to lower the prices you pay to deliver content out of Amazon CloudFront. Because we charge more where our costs are higher, this means that you pay more to deliver your content with low latency to end-users in some locations. Price Classes let you reduce your delivery prices by excluding Amazon CloudFront’s more expensive edge locations from your Amazon CloudFront distribution.
 4. Lambda@Edge runs your code globally at AWS locations close to your users, so you can deliver full-featured, customized content with high performance, and low latency. Customize your content delivery, dynamically.
+5. CloudFront Using field-level encryption to help protect sensitive data
 
-5. **AWS Global Accelerator** is a networking service that helps you improve the availability and performance of the applications that you offer to your global users(e.g. Live sports to global users). **Directing users to different instances of the appp in different regions based on latency.** AWS Global Accelerator is easy to set up, configure, and manage. It provides static IP addresses that provide a fixed entry point to your applications and eliminate the complexity of managing specific IP addresses for different AWS Regions and Availability Zones. AWS Global Accelerator always routes user traffic to the optimal endpoint based on performance, reacting instantly to changes in application health, your user’s location, and policies that you configure. Global Accelerator is a good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP. Therefore, this option is correct.
+6. **AWS Global Accelerator** is a networking service that helps you improve the availability and performance of the applications that you offer to your global users(e.g. Live sports to global users). **Directing users to different instances of the appp in different regions based on latency.** AWS Global Accelerator is easy to set up, configure, and manage. It provides static IP addresses that provide a fixed entry point to your applications and eliminate the complexity of managing specific IP addresses for different AWS Regions and Availability Zones. AWS Global Accelerator always routes user traffic to the optimal endpoint based on performance, reacting instantly to changes in application health, your user’s location, and policies that you configure. Global Accelerator is a good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP. Therefore, this option is correct.
    User -> Edge location -> AWS Global Accelerator -> Endpoint group -> Application Endpoints
 
 ### Route 53
@@ -248,6 +257,8 @@ Transfer Family provides fully managed support for file transfers directly into 
 
 1. Security Groups = network security, control how traffic is allowed into or out of EC2. only contain allow rules, stateful
 2. Network ACL = operates at subnet level, support allow or deny, lower number(Priority) will be evaluate first, stateless
+3. AWS KMS solution uses an envelope encryption strategy with customer master keys (CMKs). Envelope encryption is the practice of encrypting plaintext data with a data key, and then encrypting the data key under another key. Use CMKs to generate, encrypt, and decrypt the data keys that you use outside of AWS KMS to encrypt your data. CMKs are created in AWS KMS and never leave AWS KMS unencrypted.
+
 
 ### GuardDuty
 
