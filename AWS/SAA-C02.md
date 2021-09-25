@@ -39,7 +39,7 @@
    - m5.2xlarge, m:instance class, 5: generate, 2xlarge: size
 
 3. Purchasing Options
-
+   - Billing start when EC2 initiates the boot sequence of AMI, ends when shuts down. 
    - On-Demand Instances: short workload, predictable pricing
    - Reserved(minimum 1 year):
      - Reserved Instances: long workloads
