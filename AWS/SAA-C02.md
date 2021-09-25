@@ -227,6 +227,7 @@ Transfer Family provides fully managed support for file transfers directly into 
 
 1. FIFO queue support < 3000 message /second with batching, without batching, 300 message/second
 2. Cannot convert standard queues to FIFO queue.
+3. Unlimit number of queues and messages, default store 4 days. 
 
 ### VPC & Network
 
