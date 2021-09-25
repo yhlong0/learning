@@ -220,6 +220,7 @@ Transfer Family provides fully managed support for file transfers directly into 
 6. Multivalue answer routing policy – domain to multiple IPs, can enable health check, only return health IPs(up to 8). 
 7. Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify.
 8. Route 53 **alias records** let you route traffic to selected AWS resources, such as CloudFront distributions and Amazon S3 buckets. They also let you route traffic from one record in a hosted zone to another record.
+9. Active-Active failover, all resources to be available. Active-Passive, only primary available. 
 
 ## Decoupling applications: SQS, SNS, Kinesis, Active MQ
 
