@@ -47,6 +47,7 @@
      - Scheduled Reserved Instances: Thursday 3-5 pm
    - Spot Instances: short workloads, cheap, can lose (less reliable)
    - Dedicated Hosts: book an entire physical server, control instance placement.
+   - Dedicated Instances are Amazon EC2 instances that run in a VPC on hardware that's dedicated to a single customer. physically isolated, Pay for Dedicated Instances On-Demand, save up to 70% by purchasing Reserved Instances, or save up to 90% by purchasing Spot Instances.
 
 4. EC2 instance Roles, access other services on your behalf.
 5. Launch Types(On-demand, Spot Instances, Spot Fleet)
