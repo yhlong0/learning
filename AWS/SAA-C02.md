@@ -212,12 +212,12 @@ Transfer Family provides fully managed support for file transfers directly into 
 
 ### Route 53
 
-1. Simple routing policy – Use for a single resource that performs a given function for your domain, for example, a web server that serves content for the example.com website.
+1. Simple routing policy – Use for a single resource that performs a given function for your domain, for example, a web server that serves content for the example.com website. Can return multiple IPs, but unable to health check.
 2. Failover routing policy – Use when you want to configure active-passive failover.
 3. Geolocation routing policy – Use when you want to route traffic based on the location of your users.
 4. Geoproximity routing policy – Use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another.
 5. Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the Region that provides the best latency with less round-trip time.
-6. Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.
+6. Multivalue answer routing policy – domain to multiple IPs, can enable health check, only return health IPs(up to 8). 
 7. Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify.
 8. Route 53 **alias records** let you route traffic to selected AWS resources, such as CloudFront distributions and Amazon S3 buckets. They also let you route traffic from one record in a hosted zone to another record.
 
