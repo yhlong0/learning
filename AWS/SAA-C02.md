@@ -33,7 +33,8 @@
    - Accelerated Computing
    - Storage Optimized
    - Nitro, higher Speed EBS(64,000 IOPS)
-
+   - M3 vs M1, same CPU, Memory, M3(recommend) is cheaper, more consist, better performance, can add ssd. M1 however can have more disk space in case you need. 
+   
 2. Naming convention
 
    - m5.2xlarge, m:instance class, 5: generate, 2xlarge: size
@@ -221,6 +222,9 @@ Transfer Family provides fully managed support for file transfers directly into 
 7. Weighted routing policy – Use to route traffic to multiple resources in proportions that you specify.
 8. Route 53 **alias records** let you route traffic to selected AWS resources, such as CloudFront distributions and Amazon S3 buckets. They also let you route traffic from one record in a hosted zone to another record.
 9. Active-Active failover, all resources to be available. Active-Passive, only primary available. 
+10. TLD(top level domain), the last part of a domain name, such as .com, .org, or .ninja.
+11. Hosted zone, A container for records, which include information about how you want to route traffic for a domain (such as example.com) and all of its subdomains (such as www.example.com, retail.example.com, and seattle.accounting.example.com).
+
 
 ## Decoupling applications: SQS, SNS, Kinesis, Active MQ
 
