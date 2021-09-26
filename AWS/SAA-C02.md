@@ -159,8 +159,10 @@
 
 ### DynamoDB
 
-1. Can auto scaling, DynamoDB-> Utilization metrics -> Cloudwatch Alarm -> Auto scaling
-2. Statically provision WCU and RCU, Auto scaling, or Blended reserved capacity.
+1. Auto scaling, good for predict traffic, cheaper than On Demand, DynamoDB-> Utilization metrics -> Cloudwatch Alarm -> Auto scaling
+2. On-Demand, good for unpredict traffic, cost more 
+3. Statically provision WCU and RCU, Auto scaling, or Blended reserved capacity.
+ 
 
 ### Redshift
 
