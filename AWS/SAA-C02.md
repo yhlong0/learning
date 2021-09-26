@@ -75,7 +75,8 @@
    - EBS Multi-Attach
    - EBS Encryption
    - EBS RAID configurations
-
+   - Amazon Data Lifecycle Manager, can manage the lifecycle of your AWS resources, EBS volumes and snapshots.
+  
 10. EFS
     - EFS support unix-style r/w/e permission based on user ID and group IDs
     - EFS Access Points can override user ID and group IDs, to manage application access
