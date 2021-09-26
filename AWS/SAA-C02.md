@@ -276,6 +276,8 @@ A networking service that helps you improve the availability and performance of 
 2. Network ACL, operates at subnet level, support allow or deny, lower number(Priority) will be evaluate first, stateless
 3. AWS KMS solution uses an *envelope encryption strategy* with customer master keys (CMKs). Envelope encryption is the practice of encrypting plaintext data with a data key, and then encrypting the data key under another key. Use CMKs to generate, encrypt, and decrypt the data keys that you use outside of AWS KMS to encrypt your data. CMKs are created in AWS KMS and never leave AWS KMS unencrypted.
 
+### AWS Security Hub 
+Security Hub is a cloud security posture management service that performs security best practice checks, aggregates alerts, and enables automated **remediation**.
 
 ### GuardDuty
 
