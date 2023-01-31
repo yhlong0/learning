@@ -231,7 +231,11 @@ Tax: 9950 * 10% + (30,000 - 9950) * 12% = 3401
 
 Part 2:
 
-Assume you have 100,000+ requests, and ask to calculate the tax
+Assume you have 100,000+ requests, each request include a income and age. 
+For people who's age is between 55 - 65, they will only need to pay 90% of Tax
+For people who's age is older than 65, they will only need to pay 80% of Tax. 
+
+Try to use go routine and channel process all these requests. 
  * 
  * 
  */
