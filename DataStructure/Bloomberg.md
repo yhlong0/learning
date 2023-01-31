@@ -213,6 +213,8 @@ tax bracket calculator
 ```
 /**
  * 
+Tax bracket calculator
+
 10%    $0 to $9,950          
 12%    $9,951 to $40,525   
 22%    $40,526 to $86,375    
@@ -220,6 +222,16 @@ tax bracket calculator
 32%    $164,926 to $209,425
 35%    $209,426 to $523,600
 37%    $523,601 or more     
+
+Example: 
+
+Income: 30,000
+Tax: 9950 * 10% + (30,000 - 9950) * 12% = 3401
+
+
+Part 2:
+
+Assume you have 100,000+ requests, and ask to calculate the tax
  * 
  * 
  */
